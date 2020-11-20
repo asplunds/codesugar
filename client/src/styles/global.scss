@@ -27,9 +27,9 @@ a {
     grid-template-rows: $header-height calc(100vh - #{$header-height}) 200px;
     grid-template-columns: auto $front-column-width $front-column-width auto;
     grid-template-areas:
-        "header header header   header"
-        ".      front  front    ."
-        "footer footer footer   footer";
+        "header header header header"
+        ".      front  front  ."
+        "footer footer footer footer";
 }
 
 @media screen and (max-width: ($front-column-width * 2)) {
