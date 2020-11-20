@@ -24,5 +24,29 @@ a {
 
 #root {
     display: grid;
-    grid-template-areas: ;
+    grid-template-rows: $header-height calc(100vh - #{$header-height}) 200px;
+    grid-template-columns: auto $front-column-width $front-column-width auto;
+    grid-template-areas:
+        "header header header   header"
+        ".      front  front    ."
+        "footer footer footer   footer";
+}
+
+@media screen and (max-width: ($front-column-width * 2)) {
+    #root {
+        grid-template-columns: 0 1fr 1fr 0;
+    }
+}
+
+.header {
+    background: darkblue;
+    grid-area: header;
+}
+.page {
+    grid-area: front;
+    background: tomato;
+}
+.footer {
+    background: green;
+    grid-area: footer;
 }

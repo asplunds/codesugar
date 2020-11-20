@@ -16,9 +16,9 @@ function CreatePage(props:Props) {
 
     return <>
         <Header />
-            <Page>
-                { children }
-            </Page>
+        <Page>
+            { children }
+        </Page>
         <Footer />
     </>;
 
