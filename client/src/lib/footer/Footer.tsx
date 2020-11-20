@@ -1,9 +1,15 @@
 import React from "react";
 
-function Footer(props:Object) {
+interface Props {
+    children?: React.ReactNode;
+}
 
+function Footer(props:Props) {
+    
     return <>
-        
+        <footer className="footer">
+            footer...
+        </footer>
     </>;
 
 }
