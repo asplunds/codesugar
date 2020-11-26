@@ -1,0 +1,9 @@
+.ui-textarea {
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 16px;
+
+    &::placeholder {
+        font-family: inherit;
+    }
+}

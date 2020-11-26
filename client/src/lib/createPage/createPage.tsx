@@ -2,7 +2,9 @@ import React from "react";
 
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import Page from "./Page";
+
+import CreatePageMain from "./CreatePageMain";
+import CreatePageAside from "./CreatePageAside";
 
 import "../../styles/global.scss";
 
@@ -16,12 +18,13 @@ function CreatePage(props:Props) {
 
     return <>
         <Header />
-        <Page>
-            { children }
-        </Page>
+        { children }
         <Footer />
     </>;
 
 }
 
 export default CreatePage;
+
+export const Aside = CreatePageAside;
+export const Main = CreatePageMain;

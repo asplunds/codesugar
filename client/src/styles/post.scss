@@ -1,0 +1,47 @@
+@import "config";
+
+.post-container {
+    width: 590px;
+    list-style: none;
+}
+
+.post {
+    max-width: var(--max-width);
+    padding: var(--padding);
+    background: $background-color-2;
+    box-shadow: 0 0 20px $box-shadow;
+    border-radius: var(--padding);
+    margin-top: var(--padding);
+    width: 590px;
+    overflow: hidden;
+    &:first-child {
+        margin-top: 0;
+    }
+    
+    &.post-animation {
+        opacity: 0;
+        animation-name: fly-in;
+        animation-duration: .2s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        transform-origin: center;
+    }
+}
+
+@keyframes fly-in {
+    0% {
+        transform: translateY(60px) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .post {
+        //--padding: 1rem;
+    }
+}

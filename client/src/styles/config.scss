@@ -1,6 +1,15 @@
 $background-color: rgb(23, 25, 29);
+$background-color-2: rgb(39, 42, 59);
+$box-shadow: #111;
 $theme-color: #D0F4DE;
 $color: #ccc;
 
 $header-height: 100px;
 $front-column-width: 700px;
+$front-aside-width: 500px;
+
+$border-radius-big: 2rem;
+
+:export {
+    backgroundColor: "hi";
+}

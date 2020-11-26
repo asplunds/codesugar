@@ -23,18 +23,20 @@ a {
 }
 
 #root {
+    position: relative;
+    width: 100%;
     display: grid;
-    grid-template-rows: $header-height calc(100vh - #{$header-height}) 200px;
-    grid-template-columns: auto $front-column-width $front-column-width auto;
+    grid-template-rows: $header-height auto 200px;
+    grid-template-columns: 0 repeat(3, 33.333333333%) 0;
     grid-template-areas:
-        "header header header header"
-        ".      front  front  ."
-        "footer footer footer footer";
+        "header header header header header"
+        ".      front  front  front  ."
+        "footer footer footer footer footer";
 }
 
-@media screen and (max-width: ($front-column-width * 2)) {
+@media screen and (max-width: ($front-column-width * 3 + 16px)) {
     #root {
-        grid-template-columns: 0 1fr 1fr 0;
+
     }
 }
 
@@ -43,8 +45,11 @@ a {
     grid-area: header;
 }
 .page {
+    //min-height: calc(100vh - #{$header-height});
     grid-area: front;
-    background: tomato;
+}
+.aside {
+    grid-area: aside;
 }
 .footer {
     background: green;

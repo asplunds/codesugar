@@ -2,40 +2,39 @@
 
 
 .front-page {
+
+    --padding: 2rem;
+
+    --max-width: calc(100vw - var(--padding));
+
+    padding: var(--padding) 0;
     position: relative;
-    background: navy;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
     height: 100%;
+    width: 100%;
+    overflow: hidden;
+
     .front-page-column {
-        width: 50%;
         height: 100%;
         padding: 1rem;
         .front-page-column-inner {
             position: relative;
             height: 100%;
             width: 100%;
-            background: lightgreen;
+/*             background: $background-color-2;
+            box-shadow: 0 0 60px $box-shadow; */
+            border-radius: $border-radius-big;
         }
 
-        &:first-child {
-            padding-right: 0;
-        }
+
+    }
+
+    & > * {
+        max-width: var(--max-width);
     }
 }
 
 @media screen and (max-width: 1000px) {
-    .front-page {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        .front-page-column {
-            height: unset;
-            width: unset;
 
-            &:first-child {
-                padding-right: unset;
-                padding-bottom: 0;
-            }
-        }
-    }
 }
