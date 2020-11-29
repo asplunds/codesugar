@@ -20,8 +20,8 @@ services:
     restart: always
   
   mongo:
-    #volumes:
-    #- ./mongo:/data/db
+    volumes:
+    - ./mongo:/data/db
     logging:
       driver: none
     image: mongo

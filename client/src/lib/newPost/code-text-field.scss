@@ -1,0 +1,75 @@
+.code-text-field {
+    position: relative;
+
+    .code-text-field-inner {
+        position: relative;
+        //z-index: 3;
+        pointer-events: none;
+        max-height: 500px;
+        overflow: auto;
+        code {
+            position: relative;
+            z-index: 5;
+        }
+    }
+
+    .code-text-field-editor {
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
+        max-height: 500px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: transparent;
+        font-size: inherit;
+        color: inherit;
+        resize: none;
+
+        font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        overflow-wrap: normal;
+        line-height: 1.5;
+        tab-size: 4;
+        hyphens: none;
+        padding: 1em;
+        margin: 1em 0px;
+        overflow: auto;
+        border-radius: 0.3em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 2em);
+        z-index: 2;
+        
+    }
+
+    .code-text-field-remove {
+        opacity: 0;
+        z-index: 6;
+        position: absolute;
+        top: .5em;
+        right: 0;
+        transform: scale(0.8);
+        transition: all .2s ease-out;
+        
+        button {
+            width: 3rem;
+        }
+    }
+
+    &:hover .code-text-field-remove, &:focus-within .code-text-field-remove {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (pointer: coarse) {
+    .code-text-field .code-text-field-remove {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

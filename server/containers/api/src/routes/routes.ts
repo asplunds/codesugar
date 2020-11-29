@@ -1,0 +1,1 @@
+export { default as newPost }   from "./post/newPost";

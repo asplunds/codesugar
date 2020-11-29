@@ -1,5 +1,5 @@
 export namespace Post {
-    interface post {
+    export interface post {
         description?: string;
         title: string;
         snippets: [postSnippet]

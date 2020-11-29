@@ -1,0 +1,10 @@
+@import "config";
+.post pre {
+    padding: 1rem !important;
+    background: rgba($background-color, .5) !important;
+    border-left: 4px solid $theme-color !important;
+    margin: 15px 0 !important;
+}
+.code-theming-override-color-only pre {
+    background: rgba($background-color, .5) !important;
+}

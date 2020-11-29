@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useRecoilValue } from "recoil";
+
+import NewPostSnippets, { codeSnippetsState } from "./NewPostCodeSnippets";
+
 import "../../styles/new-post.scss";
 
-import styles from "../../styles/config.scss";
+import {
+    Button,
+    TextField as Textarea
+} from "@material-ui/core";
 
-import { Title, Paragraph as P, Textarea } from "ui";
+import {
+    Title,
+    Paragraph as P
+} from "ui";
 
 
 interface Props {
@@ -12,18 +22,43 @@ interface Props {
 
 function NewPost(props:Props) {
 
-    console.log(styles);
+    const codeSnippets = useRecoilValue(codeSnippetsState);
+
+    useEffect(() => {
+        //console.log(codeSnippets);
+    },[ codeSnippets ]);
 
     return <>
         <div className="new-post">
             <div className="new-post-inner">
-                <Title level={1}>
-                    New code sugar
-                </Title>
-                <P>
-                    Show off your sugary syntax
-                </P>
-                <Textarea></Textarea>
+                <div className="new-post-content">
+                    <Title level={1}>
+                        New code sugar
+                    </Title>
+                    <P>
+                        Show off your sugary syntax
+                    </P>
+                    <div className="new-post-form-element">
+                        <Textarea variant="outlined" fullWidth label="Title"></Textarea>
+                    </div>
+                    
+                    <NewPostSnippets />
+
+                    <div className="new-post-form-element">
+                        <Textarea
+                            variant="outlined"
+                            fullWidth
+                            label="Short description"
+                            multiline
+                            rows={2}
+                            rowsMax={7}
+                        ></Textarea>
+                    </div>
+
+                    <div className="new-post-form-element new-post-align-right">
+                        <Button color="primary" variant="contained">Post</Button>
+                    </div>
+                </div>
             </div>
         </div>
     </>;

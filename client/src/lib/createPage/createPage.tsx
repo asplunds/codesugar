@@ -6,6 +6,11 @@ import Footer from "../footer/Footer";
 import CreatePageMain from "./CreatePageMain";
 import CreatePageAside from "./CreatePageAside";
 
+import { RecoilRoot } from "recoil";
+
+import { ThemeProvider } from "@material-ui/core";
+import theme from "./theme";
+
 import "../../styles/global.scss";
 
 interface Props {
@@ -17,9 +22,13 @@ function CreatePage(props:Props) {
     const { children } = props;
 
     return <>
-        <Header />
-        { children }
-        <Footer />
+        <RecoilRoot>
+            <ThemeProvider theme={theme}>
+                <Header />
+                { children }
+                <Footer />
+            </ThemeProvider>
+        </RecoilRoot>
     </>;
 
 }

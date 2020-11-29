@@ -1,0 +1,10 @@
+{
+    "name": "validationMessages",
+    "messages": [
+        {
+            "key": "POST_TITLE_TOO_SHORT",
+            "description": "",
+            "message": "The given title `%0` is too short. The title must be %1 characters long."
+        }
+    ]
+}
